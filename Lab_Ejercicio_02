@@ -1,0 +1,38 @@
+package sesionunoejerciciodos;
+
+import javax.swing.JOptionPane;
+public class SesionUnoEjercicioDos {
+
+ 
+    public static void main(String[] args) {
+        
+        long cant;
+        String cantCad;
+        double ProveedorA, ProveedorB;
+        
+        //Se ingresa datos por teclado a través de una caja de dialogo, que se guarda en la variable cantCad
+        cantCad = JOptionPane.showInputDialog(null, "Ingrese la cantidad", "Empresa",1);
+        //Convierte a un valor entero el valor ingresado, y se guarda lo convertido en la var cant
+        cant = Integer.parseInt(cantCad);
+        
+        //Calcula el descuento del proveedor A
+        //Condicional doble
+        if(cant > 50){
+            ProveedorA=0.15*cant*25;
+        }
+        else{
+            ProveedorA = 0;
+        }
+        if(cant > 30){
+            ProveedorB = 0.10*cant*27.5;
+        }
+        else{
+            ProveedorB = 0;
+        }
+        if(ProveedorA > ProveedorB){
+            JOptionPane.showMessageDialog(null, "Proveedor A", "La mejor opción es: ",1);
+        }else{
+            JOptionPane.showMessageDialog(null, "Proveedor B", "La mejor opción es: ",1);
+        }
+    }
+}
