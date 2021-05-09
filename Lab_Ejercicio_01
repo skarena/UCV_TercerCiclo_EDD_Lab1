@@ -1,0 +1,39 @@
+package sesionunoejerciciouno;
+
+import javax.swing.JOptionPane;
+
+public class SesionUnoEjercicioUno {
+
+    public static void main(String[] args) { //Método principal
+        //Declarando variables
+        int num1, num2, num3;
+        String n1Cad, n2Cad, n3Cad;
+        double promedio;
+        //Se ingresa los datos por teclado a través de la clase JOption Pane y el métod es showingputDialog()
+        n1Cad = JOptionPane.showInputDialog(null, "Ingrese la primera nota", "Universidad Autónoma", 1);
+        n2Cad = JOptionPane.showInputDialog(null, "Ingrese la segunda nota", "Universidad Autónoma",1);
+        n3Cad = JOptionPane.showInputDialog(null, "Ingrese la tercera nota","Universidad Autónoma",1);
+        
+        //Convirtiendo de una cadena numérica a un valor entero
+        num1 = Integer.parseInt(n1Cad);
+        num2 = Integer.parseInt(n2Cad);
+        num3 = Integer.parseInt(n3Cad);
+        
+        //Calculando el promedio de las notas ingresadas
+        promedio = (double)(num1+num2+num3)/3;
+        //Condicional simple
+        if(promedio >=0 && promedio <=5){
+            JOptionPane.showMessageDialog(null, "Pésimo");
+        }
+        if(promedio >=6 && promedio <=10){
+            JOptionPane.showMessageDialog(null, "Deficiente");
+        }
+        if(promedio >=11 && promedio <=15){
+            JOptionPane.showMessageDialog(null, "Regular");
+        }
+        if(promedio >=16 && promedio <=20){
+            JOptionPane.showMessageDialog(null, "Bueno");
+        }
+    }
+    
+}
