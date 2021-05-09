@@ -1,0 +1,72 @@
+
+package sesionunoejerciciotres;
+
+import javax.swing.JOptionPane;
+
+
+public class SesionUnoEjercicioTres {
+
+    
+    public static void main(String[] args) {
+        
+        String CategoriaCad;
+        double Promedio, PensionNueva = 0, PensionActual = 0, Descuento;
+        int Categoria;
+        String PromedioCad;
+        
+        CategoriaCad = JOptionPane.showInputDialog(null, "UNIVERSIDAD CÉSAR VALLEJO\n" +
+                                                           "\n"+
+                                                         "Sistema de Categorización del Alumnado\n" + 
+                                                            "Categoría  A   [ 1 ]\n" + 
+                                                            "Categoría  B   [ 2 ]\n" + 
+                                                            "Categoría  C   [ 3 ]\n" + 
+                                                            "Categoría  D   [ 4 ]\n" , "Portal", 3);
+        Categoria = Integer.parseInt(CategoriaCad);
+        
+        //Implementando la condicional múltiple (switch)
+        switch(Categoria){
+            case 1:{
+                PensionActual = 500;
+                break;
+            }
+            case 2:{
+                PensionActual = 550;
+                break;
+            }
+            case 3:{
+                PensionActual = 460;
+                break;
+            }
+            case 4:{
+                PensionActual = 400;
+                break;
+            }
+        }
+        PromedioCad = JOptionPane.showInputDialog(null, "Ingrese el promedio ponderado" + 
+                                                        "del alumno" , "UCV" , 3);
+        Promedio = Double.parseDouble(PromedioCad);
+        
+        if(Promedio <= 13.99){
+            Descuento = 0;
+        }else{
+            if(Promedio <= 15.99){
+                Descuento = 0.10 * PensionActual;
+            }else{
+                if(Promedio <= 15.99){
+                    Descuento = 0.10 * PensionActual;
+                }else{
+                    if(Promedio <= 17.99){
+                        Descuento = 0.12 * PensionActual;
+                    }else{
+                        Descuento = 0.15 * PensionActual;
+                    }
+                }
+            }
+        }
+        
+        PensionNueva = PensionActual - Descuento;
+        
+        JOptionPane.showMessageDialog(null, "La pensión Actual es: " + PensionActual);
+        JOptionPane.showMessageDialog(null, "La pensión Nueva es: " + PensionNueva);
+    }    
+}
